@@ -18,12 +18,19 @@
 
 
 </head>
-<body class="text-center text-bg-dark d-flex flex-column h-100">
+<body class="text-center text-bg-dark d-flex flex-column h-100 cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+
+    <style>
+        #inputFormWidth {
+        max-width: 300px; 
+        margin: 0 auto; 
+        }
+    </style>
         
     <div id="app" class="container">
         <h1 class="mt-4">Percent Off Calculator</h1>
 
-        <div class="mt-4" >
+        <div class="mt-4" id="inputFormWidth">
 
             <label for="inputPrice">Enter the original price ($):</label>
             <input v-model="inputPrice" id="inputPrice" type="number" class="form-control" required>
