@@ -23,57 +23,27 @@
 <body class="text-center text-bg-dark d-flex flex-column h-100">
         
     <div id="app" class="container">
-        <h1 class="mt-4">Retirement Calculator</h1>
-        <div class="mt-4">
-            <label for="calculationType">Select a calculation:</label>
+        <h1 class="mt-4">Percent Off Calculator</h1>
+
+        <div class="mt-4" >
+
+            <label for="inputPrice">Enter the original price ($):</label>
+            <input v-model="inputPrice" id="inputP" type="number" class="form-control" required>
+
             <p></p>
-            <select v-model="selectedCalculation" id="calculationType" class="form-select">
-                <option v-for="(calculation, index) in calculations" :value="index">{{ calculation }}</option>
-            </select>
-        </div>
-        <div class="mt-4" v-if="selectedCalculation !== null">
+            
+            <label for="inputPercentOff">Enter the percent off (%):</label>
+            <input v-model="inputPercentOff" id="inputF" type="number" class="form-control" required>
 
-        <label v-if="inputPValues.includes(selectedCalculation)" for="inputP">Enter the Principle amount ($P):</label>
-        <input v-if="inputPValues.includes(selectedCalculation)" v-model="inputP" id="inputP" type="number" class="form-control" required>
-
-        <p></p>
-        
-        <label v-if="inputFValues.includes(selectedCalculation)" for="inputF">Enter the final amount ($F):</label>
-        <input v-if="inputFValues.includes(selectedCalculation)" v-model="inputF" id="inputF" type="number" class="form-control" required>
-
-        <p></p>
-        
-        <label v-if="inputIValues.includes(selectedCalculation)" for="inputI">Enter interest rate as a percentage (i%):</label>
-        <input v-if="inputIValues.includes(selectedCalculation)" v-model="inputI" id="inputI" type="number" class="form-control" required>
-        
-        <p></p>
-
-        <label v-if="inputAValues.includes(selectedCalculation)" for="inputA">Enter amount per compounding period ($A):</label>
-        <input v-if="inputAValues.includes(selectedCalculation)" v-model="inputA" id="inputA" type="number" class="form-control" required>
-        
-        <p></p>
-
-        <label v-if="inputNValues.includes(selectedCalculation)" for="inputN">Enter number of compounding periods (N):</label>
-        <input v-if="inputNValues.includes(selectedCalculation)" v-model="inputN" id="inputN" type="number" class="form-control" required>
-        
-        <p></p>
-
-        <label v-if="inputGValues.includes(selectedCalculation)" for="inputG">Enter the uniform period-by-period cash flow ($G):</label>
-        <input v-if="inputGValues.includes(selectedCalculation)" v-model="inputG" id="inputG" type="number" class="form-control" required>
-        
-        <p></p>
-
-        <label v-if="inputfValues.includes(selectedCalculation)" for="inputf">Enter the geometric gradient interest rate as a percentage (f%):</label>
-        <input v-if="inputfValues.includes(selectedCalculation)" v-model="inputf" id="inputf" type="number" class="form-control" required>
+            <p></p>
             
 
-
-        <button class="btn btn-primary mt-3" @click="calculate">Calculate</button>
-        <button class="btn btn-primary mt-3" @click="reset">Reset</button>
-        <div v-if="output !== null" class="mt-4">
-            <h1>Result:</h1>
-            <h3>{{outputType}}: ${{ output.toFixed(2) }}</h3>
-        </div>
+            <button class="btn btn-primary mt-3" @click="calculate">Calculate</button>
+            <button class="btn btn-primary mt-3" @click="reset">Reset</button>
+            <div v-if="output !== null" class="mt-4">
+                <h1>Result:</h1>
+                <h3>{{outputType}}: ${{ output.toFixed(2) }}</h3>
+            </div>
         </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.min.js"></script>
