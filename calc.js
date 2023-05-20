@@ -2,8 +2,8 @@ new Vue({
     el: '#app',
     data: {
         selectedCalculation: null,
-        inputPrice: 0,
-        inputPercentOff: 0,
+        inputPrice: null,
+        inputPercentOff: null,
         inputTaxRate: 6.625,
         output: null,
         outputType: null,
