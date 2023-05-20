@@ -31,9 +31,9 @@ new Vue({
         },
 
         reset() {
-            this.inputPrice = 0
-            this.inputPercentOff = 0
-            this.inputTaxRate = 0
+            this.inputPrice = null
+            this.inputPercentOff = null
+            this.inputTaxRate = null
             this.output = null
             this.outputType = null
             this.selectedCalculation = null        
