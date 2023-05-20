@@ -13,6 +13,11 @@ new Vue({
             let price = parseFloat(this.inputPrice);
             let percentOff = parseFloat(this.inputPercentOff);
             let taxRate = parseFloat(this.inputTaxRate);
+            console.log(price + " " + percentOff + " " + taxRate);
+
+            if (isNaN(price)) price = 0;
+            if (isNaN(percentOff)) percentOff = 0;
+            if (isNaN(taxRate)) taxRate = 0;
         
             let priceAfterDiscount = price * (1 - percentOff / 100);
             let taxAmount = priceAfterDiscount * (taxRate / 100);
